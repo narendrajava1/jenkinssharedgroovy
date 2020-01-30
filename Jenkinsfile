@@ -5,7 +5,7 @@ node(label: 'master') {
     def repoBranch='master'
     def mvnHome = "MAVEN_HOME"
     def pom = "pom.xml"
-    def goal = "clean"
+    def goal = "clean install"
     
     stage('Git-Checkout'){
         gitClone "${gitURL}","${repoBranch}"
@@ -13,6 +13,6 @@ node(label: 'master') {
     }
     //MVN Build
     stage('Maven Build and Push to Artifactory'){
-        mavenBuild "${mvnHome}", "${goal}"
+        mavenBuild "${mvnHome}", "${goal}", "${pom}"
     }
 }
