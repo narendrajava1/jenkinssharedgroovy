@@ -1,4 +1,4 @@
-@Library('easy-notes') _
+@Library('jenkinssharedgroovy') _
 node(label: 'master') {
     //Variables
     def gitURL='https://github.com/narendrajava1/easy-notes.git'
