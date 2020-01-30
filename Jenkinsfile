@@ -3,7 +3,7 @@ node(label: 'master') {
     //Variables
     def gitURL='https://github.com/narendrajava1/easy-notes.git'
     def repoBranch='master'
-    def mvnHome = "maven"
+    mvnHome = tool 'maven'
     def pom = "pom.xml"
     def goal = "clean install"
     
@@ -13,6 +13,6 @@ node(label: 'master') {
     }
     //MVN Build
     stage('Maven Build and Push to Artifactory'){
-        mavenBuild "${mvnHome}", "${goal}", "${pom}"
+        sh '"$MVN_HOME/bin/mvn" -Dmaven.test.failure.ignore clean package'
     }
 }
