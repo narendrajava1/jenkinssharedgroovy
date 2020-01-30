@@ -3,7 +3,7 @@ node(label: 'master') {
     //Variables
     def gitURL='https://github.com/narendrajava1/easy-notes.git'
     def repoBranch='master'
-    def mvnHome = "MAVEN_HOME"
+    def mvnHome = "maven"
     def pom = "pom.xml"
     def goal = "clean install"
     
