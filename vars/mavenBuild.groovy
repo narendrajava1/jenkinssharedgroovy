@@ -1,4 +1,4 @@
-def call (  def mvnHome,def goal,def pom){
+def call (def goal){
 	sh 'mvn "${goal}"'
   
 }
