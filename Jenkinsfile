@@ -5,7 +5,7 @@ node(label: 'master') {
     def repoBranch='master'
     mvnHome = tool 'maven'
     def pom = "pom.xml"
-    def goal = "clean install"
+    def goal = "clean"
     
     stage('Git-Checkout'){
         gitClone "${gitURL}","${repoBranch}"
