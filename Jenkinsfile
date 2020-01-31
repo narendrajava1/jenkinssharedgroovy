@@ -13,6 +13,6 @@ node(label: 'master') {
     }
     //MVN Build
     stage('Maven Build and Push to Artifactory'){
-        sh '"$MVN_HOME/bin/mvn" -Dmaven.test.failure.ignore clean package'
+       mavenBuild "${goal}"
     }
 }
