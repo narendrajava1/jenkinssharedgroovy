@@ -5,7 +5,7 @@ node(label: 'master') {
     def repoBranch='master'
     mvnHome = tool 'maven'
     def pom = "pom.xml"
-    def goal = "-Pdev clean compile install"
+    def goal = "clean compile install -Pdev "
     def registry="naren576"
     def imageName="easyNotes"
     stage('Git-Checkout'){
