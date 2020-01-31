@@ -15,4 +15,7 @@ node(label: 'master') {
     stage('Maven Build and Push to Artifactory'){
        mavenBuild "${goal}"
     }
+    //Docker build
+    stage('docker build'){
+      
 }
