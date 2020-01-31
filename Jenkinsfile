@@ -6,7 +6,8 @@ node(label: 'master') {
     mvnHome = tool 'maven'
     def pom = "pom.xml"
     def goal = "clean compile install"
-    
+    def registry="naren576"
+    def imageName="easyNotes"
     stage('Git-Checkout'){
         gitClone "${gitURL}","${repoBranch}"
         
@@ -17,5 +18,7 @@ node(label: 'master') {
     }
     //Docker build
     stage('docker build'){
+        dockerBuildAndPush "${registry}","${imageName}"
+    }
       
 }
